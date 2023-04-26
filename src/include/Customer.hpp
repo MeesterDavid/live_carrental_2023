@@ -10,7 +10,7 @@ private:
 
 public:
     Customer(){name = "", discountPercentage=-1.0;}
-    Customer(std::string);
+    Customer(std::string name);
     void setDiscount(double percentage);
     double getDiscount() const;
     std::string getName() const;
