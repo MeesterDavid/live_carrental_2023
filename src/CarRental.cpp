@@ -35,13 +35,13 @@ Customer CarRental::getRenter() const
 
 double CarRental::totalPrice() const
 {
-    return this->rentalDays*this->rentedCar.getDayPrice();
+    return this->rentalDays*this->rentedCar.getDayPrice()*((100-this->renter.getDiscount())/100);
 }
 
 std::ostream &operator<<(std::ostream &os, CarRental &rhs)
 {
     os << rhs.getRentedCar() << std::endl << 
     rhs.getRenter() << std::endl << 
-    "rental days: " << rhs.rentalDays << " for a price of " << rhs.getRentedCar().getDayPrice() << std::endl << std::endl;
+    "rental days: " << rhs.rentalDays << " for a price of " << rhs.totalPrice() << std::endl << std::endl;
 
 }
